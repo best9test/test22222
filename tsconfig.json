@@ -1,21 +1,22 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
+    "target": "es5", // JavaScript의 버전을 ES5로 설정
+    "lib": ["dom", "dom.iterable", "esnext"], // 프로젝트에 포함할 라이브러리를 지정 -> DOM, DOM Iterable, 최신 ECMAScript 기능을 포함
+    "allowJs": true, // TypeScript 파일 외에도 JavaScript 파일을 허용
+    "skipLibCheck": true, // 라이브러리 파일의 타입 검사를 건너뜀
+    "strict": true, //TypeScript의 엄격한 모드
+    "noEmit": true, // 컴파일된 파일을 출력하지 않음
+    "esModuleInterop": true, //CommonJS와 ES Module 간의 호환성을 개선햐여 `import` 문법을 사용할 때 유용
+    "module": "esnext", //최신 ES 모듈 시스템을 사용
+    "moduleResolution": "bundler", // 모듈 해석을 Node.js 스타일로 설정하여 Node.js에서 모듈을 찾는 방식과 동일하게 동작
+    "resolveJsonModule": true, //JSON 모듈을 가져올 수 있게 함. `import data from './data.json'` 같은 문법을 허용
+    "isolatedModules": true, //각 파일을 개별적인 모듈로 간주하여 컴파일
+    "jsx": "preserve", // JSX 코드를 변환하지 않고 보존하여 이 옵션을 사용하면 JSX 코드가 그대로 유지됨
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"] // @/*를 ./src/*로 매핑하여, 소스 코드 내에서 절대 경로처럼 사용할 수 있음
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"], // 포함할 파일을 지정! 여기서는 TypeScript 파일과 정의 파일을 포함합니다.
+  "exclude": ["node_modules"] // 제외할 파일을 지정! 여기서는 node_modules 폴더를 제외합니다.
 }
